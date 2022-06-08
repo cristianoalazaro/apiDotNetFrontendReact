@@ -1,0 +1,14 @@
+.div-pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-pagination{
+    margin: 10px 2px;
+    width: 50px;
+    color: #888;
+    border-radius: 10px;
+}
+.btn-pagination:hover{
+    background-color: #CCC;
+}

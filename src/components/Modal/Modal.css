@@ -1,0 +1,46 @@
+@keyframes charge{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.modal2{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    animation: charge 400ms ease;
+}
+
+.modal-item{
+    background-color: #FFF;
+    position: relative;
+    margin: 5% auto;
+    width: 60%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.modal-item .btn-closed{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    top: 10px;
+    border-radius: 50%;
+}
+
+.modal-item .btn-closed:hover{
+    background-color: #00d9ff;
+}
+
+.modal-item .title{
+    text-align: center;
+}
+
+@media (max-width: 450px){
+    .modal-item{
+        width: 98%;
+    }
+}

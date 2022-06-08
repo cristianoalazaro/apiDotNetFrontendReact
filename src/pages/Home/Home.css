@@ -1,0 +1,18 @@
+.form{
+    max-width: 400px;
+    margin: auto;
+    border: 1px solid #CCC;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #DDD;
+}
+
+.form-title{
+    color: #00B494;
+}
+
+.submit{
+    display: flex;
+  justify-content: center;
+}
