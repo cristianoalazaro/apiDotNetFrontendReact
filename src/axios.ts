@@ -33,12 +33,12 @@ export const getProductsPagination = async (pageNumber: number, recordsPerPage: 
 
 export const insertProduct = async (name: string) => {
     try {
-        return await axios.post(`${BASEURL}/produto`, { "nome": name }, 
-        {
-            headers:{
-                'Authorization': getToken()
-            }
-        });
+        return await axios.post(`${BASEURL}/produto`, { "nome": name },
+            {
+                headers: {
+                    'Authorization': getToken()
+                }
+            });
     } catch (error: any) {
         return error.response
     }
@@ -47,11 +47,11 @@ export const insertProduct = async (name: string) => {
 export const udateProduct = async (id: number, name: string) => {
     try {
         return await axios.put(`${BASEURL}/produto/${id}`, { "nome": name },
-        {
-            headers:{
-                'Authorization': getToken()
-            }
-        })
+            {
+                headers: {
+                    'Authorization': getToken()
+                }
+            })
     } catch (error: any) {
         return error.response
     }
@@ -60,11 +60,11 @@ export const udateProduct = async (id: number, name: string) => {
 export const deleteProduct = async (id: number) => {
     try {
         return await axios.delete(`${BASEURL}/produto/${id}`,
-        {
-            headers:{
-                'Authorization': getToken()
-            }
-        })
+            {
+                headers: {
+                    'Authorization': getToken()
+                }
+            })
     } catch (error: any) {
         return error.response
     }
@@ -81,6 +81,14 @@ export const signIn = async (userName: string, password: string) => {
 export const signUp = async (userName: string, password: string) => {
     try {
         return await axios.post(`${BASEURL}/login/signup`, { "userName": userName, "password": password })
+    } catch (error: any) {
+        return error.response
+    }
+}
+
+export const sendMailForgotMyPassword = async (email: string) => {
+    try {
+        return await axios.post(`${BASEURL}/password/requestchange`, {email})
     } catch (error: any) {
         return error.response
     }

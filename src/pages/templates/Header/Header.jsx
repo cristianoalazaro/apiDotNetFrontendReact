@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { userAppSelector } from '../../../redux/hooks';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAuth } from '../../../redux/authSlice';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+import './Header.css'
+
 export const Header = () => {
+    const [showUserModal, setShowUserModal] = useState(false)
+
     const dispatch = useDispatch();
     
     const auth = useSelector(state => state.auth)
@@ -19,6 +24,9 @@ export const Header = () => {
 
     return (
         <>
+            {showUserModal &&
+                <p>modal</p>
+            }
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="javascript:void(0)">Logo</a>
@@ -42,7 +50,7 @@ export const Header = () => {
                                         <a className="nav-link" href="javascript:void(0)" onClick={handleSignOut}>Sair</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="javascript:void(0)" >{auth.user}</a>
+                                        <a className="nav-link user-name" href="javascript:void(0)" >{auth.user}</a>
                                     </li>
                                 </>
                             }
